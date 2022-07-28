@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+
+<style>
+
+    body{
+        margin: 0.2%;
+       background-color: rgb(196, 201, 201);
+    }
+    #navbar{
+        background-color: rgb(128, 125, 122);
+        display: flex;
+        justify-content: flex-end;
+        padding:2%
+       
+    }
+    #navbar>div{
+        width:30px;
+        color:rgb(89, 89, 146);
+        margin-right:40px;
+        
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+
+
+<body>
+    <div id="navbar">
+        <div><a href="./index.html">Home</a> </div>
+        <div><a href="./login.html">Login</a> </div>
+        <div><a href="./signup.html">Signup</a> </div>
+    </div>
+    <form action="">
+        <h1>Email</h1>
+        <input type="text" id="mail" placeholder="Email">
+        <h2>Contact</h2>
+        <input type="text" id="phn" placeholder="contact Number">
+        <h2>Password</h2>
+        <input type="text" id="pass" placeholder="password"><br><br>
+        <input type="submit">
+
+    </form>
+</body>
+
+
+<script>
+    document.querySelector("form").addEventListener("submit",jhumroo)
+    var arr=JSON.parse(localStorage.getItem("details"))||[]
+    function jhumroo(){
+        event.preventDefault()
+        var mail=document.querySelector("#mail").value
+        var phn=document.querySelector("#phn").value
+        var pass=document.querySelector("#pass").value
+        if(mail.length==0||phn.length==0||pass.length==0){
+            alert("Enter Details")
+            return
+        }
+        
+        var details={
+            mail:mail,
+            phn:phn,
+            pass:pass,
+        }
+        arr.push(details)
+        localStorage.setItem("details",JSON.stringify(arr))
+    }
+</script>
+</html>

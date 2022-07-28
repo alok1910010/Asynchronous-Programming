@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app</title>
+</head>
+<style>
+    body{
+       margin: 0.5%;
+       background-color: rgb(62, 116, 40);
+    }
+    #navbar{
+        background-color: rgb(236, 115, 166);
+        display: flex;
+        justify-content: flex-end;
+        padding:2%
+       
+    }
+    #navbar>div{
+        width:30px;
+        color:rgb(7, 7, 7);
+        margin-right:40px;
+        
+    }
+    a{
+        text-decoration: none;
+    }
+    button{
+        height: 50px;
+        width: 120px;
+    
+        margin: 20px;
+    }
+    
+</style>
+
+<body>
+    <div id="navbar">
+        <div><a href="./index.html">Home</a> </div>
+        <div><a href="./login.html">Login</a> </div>
+        <div><a href="./signup.html">Signup</a> </div>
+    </div>
+    <div id="sort">
+        <button onclick="lh()">Low to High</button>
+        <button onclick="hl()">High to Low</button>
+    </div>
+     <div id="container">
+
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>

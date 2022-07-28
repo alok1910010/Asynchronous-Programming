@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <style>
+        body{
+       margin: 0.2%;
+       background-color: aqua;
+    }
+    #navbar{
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: flex-end;
+        padding:2%
+       
+    }
+    #navbar>div{
+        width:30px;
+        color:blue;
+        margin-right:40px;
+        
+    }
+    a{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="./index.html">Home</a> </div>
+        <div><a href="./login.html">Login</a> </div>
+        <div><a href="./signup.html">Signup</a> </div>
+    </div>
+    <form action="">
+        <h1>Email</h1>
+        <input type="text" id="mail" placeholder="Email">
+        <h2>Password</h2>
+        <input type="text" id="pass" placeholder="password"><br><br>
+        <input type="submit">
+
+    </form>
+    <script>
+    
+    document.querySelector("form").addEventListener("submit",verify)
+    var arr=JSON.parse(localStorage.getItem("details"))||[]
+    function verify(){
+        event.preventDefault()
+        var detail=JSON.parse(localStorage.getItem("details"))
+        console.log(detail[0].mail)
+        event.preventDefault()
+        var mail=document.querySelector("#mail").value
+        var pass=document.querySelector("#pass").value
+        if(mail.length==0||pass.length==0){
+            alert("Enter Details")
+            return
+        }
+        // for(let i=0;i<detail.length;i++){
+        if(mail==detail[0].mail && pass==detail[0].pass){
+            if(window.confirm('Login Successful . Click OK  ') ){
+window.location.href='./index.html';}
+};
+if(mail!=detail[0].mail || pass!=detail[0].pass){
+    alert("invalid credentials")
+};
+
+   
+
+    }
+</script>
+</body>
+</html>
